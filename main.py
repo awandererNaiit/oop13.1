@@ -10,7 +10,7 @@ class Category:
         Category.total_categories += 1
 
 
-class Product(Category):
+class Product:
     name: str
     description: str
     products: list
