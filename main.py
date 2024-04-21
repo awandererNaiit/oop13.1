@@ -12,7 +12,7 @@ class Category:
     def products(self):
         return self._products
 
-    @product.setter
+    @products.setter
     def products(self, products):
         self._products = products
 
