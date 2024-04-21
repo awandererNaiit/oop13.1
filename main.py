@@ -31,13 +31,6 @@ class Category:
             products_info.append(product_info)
         return products_info
 
-    def __str__(self):
-        total_products = len(self)
-        return f"{self.name}, количество продуктов: {total_products} шт."
-
-    def __len__(self):
-        return sum(product.amount for product in self._products)
-
 
 class Product:
     def __init__(self, name, description, price, amount):
@@ -56,20 +49,6 @@ class Product:
             print("Ошибка: Цена должна быть больше нуля.")
         else:
             self.__price = new_price
-
-    def __str__(self):
-        return f"{self.name}, {self.price} руб. Остаток: {self.amount} шт."
-
-    def __len__(self):
-        return self.amount
-
-    def add(self, quantity):
-        self.amount += quantity
-        print(f"Количество продукта '{self.name}' увеличено на {quantity}. Текущий остаток: {self.amount} шт.")
-
-    def __add__(self, other):
-        total_value = (self.price * self.amount) + (other.price * other.amount)
-        return total_value
 
     @staticmethod
     def create_product(name, description, price, amount):
